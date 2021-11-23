@@ -1,6 +1,6 @@
 import React from "react";
-import Expenses from "./Components/Expenses";
 import "./App.css";
+import Expensescontainer from "./Components/Expenses/Expensescontainer";
 
 const App = () => {
   const overallExpensenDetail = [
@@ -32,17 +32,8 @@ const App = () => {
 
   return (
     <div>
-      {/* pass the data from app componet to expenses componet */}
-      {overallExpensenDetail.map((items) => {
-        return (
-          <Expenses
-            time={items.currentDate}
-            title={items.expenseTitle}
-            price={items.expensePrice}
-          />
-        );
-      })}
-      {/* as we know componet is reuable so we can make component multiple time */}
+      {/* passing a overallExpensenDetail array as a from of props to Expensescontainer */}
+      <Expensescontainer expensesdetail={overallExpensenDetail} />
     </div>
   );
 };

@@ -13,11 +13,7 @@
   background-color: cornflowerblue;
   padding: 0.5em 1em;
 }
-.expense-title,
-.expense-date {
-  font-size: 1.5em;
-  font-weight: bold;
-}
+
 .expense-date {
   display: flex;
   justify-content: space-between;
