@@ -14,10 +14,21 @@ const Expenses = (props) => {
   // the current value likewise second one is a function which help to change the value or update the value.for instance
   const [title, setTitle] = useState(props.title);
 
+  // here we are making useState to hold the input type value which written by user and
+  // also hold that value show in h3 which click on button. by default the value will be empty
+  const [inputValue, setInputValue] = useState("");
+
   // make a function to add event to have change on click
   const changeTitle = () => {
     // Now to make any change on event we have to call useState function
-    setTitle("New Title added soon...");
+    setTitle(inputValue);
+  };
+
+  // here we make a function to catch the user input value and set that value in inputValue variable
+  const changeHandler = (event) => {
+    // the value that user add in input type that value is catch by using onchange event and add that value to setInputValue
+    // which add that value automatically to the inputValue
+    setInputValue(event.target.value);
   };
 
   return (
@@ -29,6 +40,12 @@ const Expenses = (props) => {
         <div className="expense-title">{title}</div>
         {/* here the title is a varibale which store the props.title */}
         <div className="expense-price">${props.price}</div>
+        <input
+          type="text"
+          value={inputValue}
+          onChange={changeHandler}
+          className="inputType"
+        />
         <button className="changebtn" onClick={changeTitle}>
           Title Change
         </button>
