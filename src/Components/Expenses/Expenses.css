@@ -19,3 +19,11 @@
   justify-content: space-between;
   width: 5%;
 }
+.changebtn {
+  background-color: cornflowerblue;
+  color: white;
+  padding: 0.1em 0.2em;
+  border-radius: 10px;
+  border: unset;
+  cursor: pointer;
+}
